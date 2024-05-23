@@ -2,20 +2,18 @@
 
   <div class="container-fluid">
 
-    <div class="d-flex justify-start items-center gap-20">
+    <div class="d-flex justify-start items-center flex-wrap gap-20">
 
-      <button type="button" class="btn btn-warning" @click="warningToaster">
+      <button type="button" class="btn btn-warning" @click="warningToaster('top-0','bottom-0','left-0','right-0','Remove cart','Remove cart successfully',4000)">
+        warning
+      </button>
+      <button type="button" class="btn btn-warning" @click="warningToaster('top-0','bottom-0','left-0','right-0','Remove cart','Remove cart successfully',4000)">
+        warning
+      </button>
+      <button type="button" class="btn btn-warning" @click="warningToaster('top-0','bottom-0','left-0','right-0','Remove cart','Remove cart successfully',4000)">
         warning
       </button>
 
-      <button type="button" class="btn btn-success" @click="successToaster">
-        success
-      </button>
-
-      <button type="button" class="btn btn-danger" @click="dangerToaster">
-        danger
-      </button>
-
     </div>
 
     <div></div>
@@ -23,93 +21,110 @@
 
   </div>
 
-  <div class="fixed top-0 right-0 m-10">
-
-    <div class="transform-effect" v-if="toasterWarning"> <!-- warning -->
-      <div class="toaster mb-10 d-flex justify-start items-center">
-        <div class="bg-warning width-30 height-30 border-radius-circle d-flex justify-center items-center shadow-warning">
-          <img :src="`/svg/warning.svg`" class="width-18 height-18" alt="error">
-        </div>
-        <div class="ml-20">
-          <div class="mb-5 text-warning head">
-            This toast message notifies.
-          </div>
-          <div class="paragraph">
-            Whatever that may be.
-          </div>
-        </div>
-      </div>
+    <div class="fixed p-10" id="toaster">
+      <ToasterComponent :type="'success'" :iconBackground="`bg-success`" :shadowType="`shadow-success`" :icon="`/svg/success.svg`" :textColor="`text-success`" :position-top="`top-0`" :position-left="`left-0`" :text="`this is successful content`" :sub-text="`this is subtext successful content`" :status="false"/>
     </div>
-
-    <div class="transform-effect" v-if="toasterSuccess"> <!-- success -->
-      <div class="toaster mb-10 d-flex justify-start items-center">
-        <div class="bg-success width-30 height-30 border-radius-circle d-flex justify-center items-center shadow-success">
-          <img :src="`/svg/success.svg`" class="width-18 height-18" alt="error">
-        </div>
-        <div class="ml-20">
-          <div class="mb-5 text-success head">
-            This toast message notifies.
-          </div>
-          <div class="paragraph">
-            Whatever that may be.
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="transform-effect" v-if="toasterDanger"> <!-- error -->
-      <div class="toaster mb-10 d-flex justify-start items-center">
-        <div class="bg-danger width-30 height-30 border-radius-circle d-flex justify-center items-center shadow-danger">
-          <img :src="`/svg/error.svg`" class="width-18 height-18" alt="error">
-        </div>
-        <div class="ml-20">
-          <div class="mb-5 text-danger head">
-            This toast message notifies.
-          </div>
-          <div class="paragraph">
-            Whatever that may be.
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
 
 </template>
 
 <script>
+import ToasterComponent from "@/components/ToasterComponent.vue";
+
 export default {
   name: 'HelloWorld',
+  components: { ToasterComponent },
   data() {
-    return {
-      toasterSuccess: false,
-      toasterWarning: false,
-      toasterDanger: false,
-    }
+    return {}
   },
   mounted() {
   },
   methods: {
 
-    successToaster() {
-      this.toasterSuccess = true;
-      setTimeout( () => {
-        this.toasterSuccess = false;
-      }, 2000 )
+    successToaster(positionTop, positionBottom, positionLeft, positionRight, text, subText, timeOut) {
+      let toaster = document.getElementById('toaster');
+      toaster.className = 'fixed p-10' + ' ' +positionTop + ' ' + positionBottom + ' ' + positionLeft + ' ' + positionRight;
+      let htmlCode = `
+        <div class="transform-effect">
+          <div class="toaster mb-10 d-flex justify-start items-center">
+            <div class="bg-success width-30 height-30 border-radius-circle d-flex justify-center items-center shadow-success">
+              <img src="/svg/success.svg" class="width-18 height-18" alt="error">
+            </div>
+            <div class="ml-20">
+              <div class="mb-5 text-success head">
+                `+text+`
+              </div>
+              <div class="paragraph">
+                `+subText+`
+              </div>
+            </div>
+          </div>
+        </div>
+      `
+      const div = document.createElement('div')
+      div.innerHTML = htmlCode
+      toaster.appendChild(div)
+      setTimeout(()=> {
+        toaster.removeChild(div)
+        toaster.className = '';
+      },timeOut)
     },
 
-    warningToaster() {
-      this.toasterWarning = true;
-      setTimeout( () => {
-        this.toasterWarning = false;
-      }, 2000 )
+    warningToaster(positionTop, positionBottom, positionLeft, positionRight, text, subText, timeOut) {
+      let toaster = document.getElementById('toaster');
+      toaster.className = 'fixed p-10' + ' ' +positionTop + ' ' + positionBottom + ' ' + positionLeft + ' ' + positionRight;
+      let htmlCode = `
+        <div class="transform-effect">
+          <div class="toaster mb-10 d-flex justify-start items-center">
+            <div class="bg-warning width-30 height-30 border-radius-circle d-flex justify-center items-center shadow-warning">
+                <img src="/svg/warning.svg" class="width-18 height-18" alt="error">
+            </div>
+            <div class="ml-20">
+              <div class="mb-5 text-warning head">
+                  `+text+`
+              </div>
+              <div class="paragraph">
+                  `+subText+`
+              </div>
+            </div>
+          </div>
+        </div>
+      `
+      const div = document.createElement('div')
+      div.innerHTML = htmlCode
+      toaster.appendChild(div)
+      setTimeout(()=> {
+        toaster.removeChild(div)
+        toaster.className = '';
+      },timeOut)
     },
 
-    dangerToaster() {
-      this.toasterDanger = true;
-      setTimeout( () => {
-        this.toasterDanger = false;
-      }, 2000 )
+    dangerToaster(positionTop, positionBottom, positionLeft, positionRight, text, subText, timeOut) {
+      let toaster = document.getElementById('toaster');
+      toaster.className = 'fixed p-10' + ' ' +positionTop + ' ' + positionBottom + ' ' + positionLeft + ' ' + positionRight;
+      let htmlCode = `
+        <div class="transform-effect">
+          <div class="toaster mb-10 d-flex justify-start items-center">
+            <div class="bg-danger width-30 height-30 border-radius-circle d-flex justify-center items-center shadow-danger">
+              <img src="/svg/error.svg" class="width-18 height-18" alt="error">
+            </div>
+            <div class="ml-20">
+              <div class="mb-5 text-danger head">
+                `+text+`
+              </div>
+              <div class="paragraph">
+                  `+subText+`
+              </div>
+            </div>
+          </div>
+        </div>
+      `
+      const div = document.createElement('div')
+      div.innerHTML = htmlCode
+      toaster.appendChild(div)
+      setTimeout(()=> {
+        toaster.removeChild(div)
+        toaster.className = '';
+      },timeOut)
     },
 
   }

@@ -7,6 +7,10 @@
   position: fixed;
 }
 
+.sticky {
+  position: sticky;
+}
+
 //  left right top bottom
 
 .top-0 {
@@ -246,4 +250,12 @@
 .shadow-warning {
   box-shadow: 0 0 12px 0 var(--warning) !important;
   border: none !important;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
 }
