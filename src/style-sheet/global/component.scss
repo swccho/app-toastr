@@ -1,0 +1,99 @@
+$iteration: 2560;
+$base-value: 1px;
+@for $i from 1 through $iteration {
+
+  /* --- --- --- text size --- --- --- */
+  .text-size {
+    font-size: $base-value * $i !important;
+  }
+
+  /* --- --- --- margin --- --- --- */
+  .m-#{$i} {
+    margin: $base-value * $i !important;
+  }
+
+  /* --- --- --- margin left right --- --- --- */
+  .mx-#{$i} {
+    margin-left: $base-value * $i !important;
+    margin-right: $base-value * $i !important;
+  }
+
+  /* --- --- --- margin top bottom --- --- --- */
+  .my-#{$i} {
+    margin-top: $base-value * $i !important;
+    margin-bottom: $base-value * $i !important;
+  }
+
+  /* --- --- --- margin bottom --- --- --- */
+  .mb-#{$i} {
+    margin-bottom: $base-value * $i !important;
+  }
+
+  /* --- --- --- margin top --- --- --- */
+  .mt-#{$i} {
+    margin-top: $base-value * $i !important;
+  }
+
+  /* --- --- --- margin left --- --- --- */
+  .ml-#{$i} {
+    margin-left: $base-value * $i !important;
+  }
+
+  /* --- --- --- margin right --- --- --- */
+  .mr-#{$i} {
+    margin-right: $base-value * $i !important;
+  }
+
+  /* --- --- --- padding  --- --- --- */
+  .p-#{$i} {
+    padding: $base-value * $i !important;
+  }
+
+  /* --- --- --- padding left right --- --- --- */
+  .px-#{$i} {
+    padding-left: $base-value * $i !important;
+    padding-right: $base-value * $i !important;
+  }
+
+  /* --- --- --- padding top bottom --- --- --- */
+  .py-#{$i} {
+    padding-top: $base-value * $i !important;
+    padding-bottom: $base-value * $i !important;
+  }
+
+  /* --- --- --- padding bottom --- --- --- */
+  .pb-#{$i} {
+    padding-bottom: $base-value * $i !important;
+  }
+
+  /* --- --- --- padding top --- --- --- */
+  .pt-#{$i} {
+    padding-top: $base-value * $i !important;
+  }
+
+  /* --- --- --- padding left --- --- --- */
+  .pl-#{$i} {
+    padding-left: $base-value * $i !important;
+  }
+
+  /* --- --- --- padding right --- --- --- */
+  .pr-#{$i} {
+    padding-right: $base-value * $i !important;
+  }
+
+  /* --- --- --- width --- --- --- */
+  .width-#{$i} {
+    width: $base-value * $i !important;
+  }
+
+  /* --- --- --- height --- --- --- */
+  .height-#{$i} {
+    height: $base-value * $i !important;
+  }
+
+  /* --- --- --- height calc --- --- --- */
+  .height-calc-#{$i} {
+    height: calc(100vh - $base-value * $i) !important;
+  }
+
+}
