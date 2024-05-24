@@ -2,47 +2,236 @@
 
   <div class="container-fluid">
 
-    <div class="d-flex justify-start items-center flex-wrap gap-20">
+    <div>
 
-      <button type="button" class="btn btn-warning" @click="warningToaster('top-0','bottom-0','left-0','right-0','Remove cart','Remove cart successfully',4000)">
-        warning
-      </button>
-      <button type="button" class="btn btn-warning" @click="warningToaster('top-0','bottom-0','left-0','right-0','Remove cart','Remove cart successfully',4000)">
-        warning
-      </button>
-      <button type="button" class="btn btn-warning" @click="warningToaster('top-0','bottom-0','left-0','right-0','Remove cart','Remove cart successfully',4000)">
-        warning
+      <button type="button" class="btn btn-dark" @click="topLeftSuccessToaster()">
+        Button
       </button>
 
     </div>
 
-    <div></div>
-    <div></div>
+    <div>
+
+      <button type="button" class="btn btn-dark" @click="topRightSuccessToaster()">
+        Button
+      </button>
+
+    </div>
+
+    <div>
+
+      <button type="button" class="btn btn-dark" @click="bottomLeftSuccessToaster()">
+        Button
+      </button>
+
+    </div>
+
+    <div>
+
+      <button type="button" class="btn btn-dark" @click="bottomRightSuccessToaster()">
+        Button
+      </button>
+
+    </div>
+
+    <div>
+
+      <button type="button" class="btn btn-dark" @click="topLeftWarningToaster()">
+        Button
+      </button>
+
+    </div>
+
+    <div>
+
+      <button type="button" class="btn btn-dark" @click="topRightWarningToaster()">
+        Button
+      </button>
+
+    </div>
+
+    <div>
+
+      <button type="button" class="btn btn-dark" @click="bottomLeftWarningToaster()">
+        Button
+      </button>
+
+    </div>
+
+    <div>
+
+      <button type="button" class="btn btn-dark" @click="bottomRightWarningToaster()">
+        Button
+      </button>
+
+    </div>
+
+    <div>
+
+      <button type="button" class="btn btn-dark" @click="topLeftDangerToaster()">
+        Button
+      </button>
+
+    </div>
+
+    <div>
+
+      <button type="button" class="btn btn-dark" @click="topRightDangerToaster()">
+        Button
+      </button>
+
+    </div>
+
+    <div>
+
+      <button type="button" class="btn btn-dark" @click="bottomLeftDangerToaster()">
+        Button
+      </button>
+
+    </div>
+
+    <div>
+
+      <button type="button" class="btn btn-dark" @click="bottomRightDangerToaster()">
+        Button
+      </button>
+
+    </div>
 
   </div>
 
-    <div class="fixed p-10" id="toaster">
-      <ToasterComponent :type="'success'" :iconBackground="`bg-success`" :shadowType="`shadow-success`" :icon="`/svg/success.svg`" :textColor="`text-success`" :position-top="`top-0`" :position-left="`left-0`" :text="`this is successful content`" :sub-text="`this is subtext successful content`" :status="false"/>
-    </div>
+  <div class="fixed p-10" id="toaster" :class="toastPosition"></div>
 
 </template>
 
 <script>
-import ToasterComponent from "@/components/ToasterComponent.vue";
 
 export default {
   name: 'HelloWorld',
-  components: { ToasterComponent },
   data() {
-    return {}
+    return {
+      toastPosition: 'top-right'
+    }
   },
   mounted() {
   },
   methods: {
 
-    successToaster(positionTop, positionBottom, positionLeft, positionRight, text, subText, timeOut) {
+    /* Success toaster position attach */
+    topLeftSuccessToaster() {
+      this.success({
+        position: `top-left`,
+        text: `Add to Cart`,
+        subText: `Add to cart successfully`,
+        duration: 4000
+      })
+    },
+
+    topRightSuccessToaster() {
+      this.success({
+        position: `top-right`,
+        text: `Add to Cart`,
+        subText: `Add to cart successfully`,
+        duration: 4000,
+      })
+    },
+
+    bottomLeftSuccessToaster() {
+      this.success({
+        position: `bottom-Left`,
+        text: `Add to Cart`,
+        subText: `Add to cart successfully`,
+        duration: 4000,
+      })
+    },
+
+    bottomRightSuccessToaster() {
+      this.success({
+        position: `bottom-right`,
+        text: `Add to Cart`,
+        subText: `Add to cart successfully`,
+        duration: 4000,
+      })
+    },
+
+    /* Warning toaster position attach */
+    topLeftWarningToaster() {
+      this.warning({
+        position: `top-left`,
+        text: `Remove From Cart`,
+        subText: `Remove from cart successfully`,
+        duration: 4000,
+      })
+    },
+
+    topRightWarningToaster() {
+      this.warning({
+        position: `top-right`,
+        text: `Remove From Cart`,
+        subText: `Remove from cart successfully`,
+        duration: 4000,
+      })
+    },
+
+    bottomLeftWarningToaster() {
+      this.warning({
+        position: `bottom-Left`,
+        text: `Remove From Cart`,
+        subText: `Remove from cart successfully`,
+        duration: 4000,
+      })
+    },
+
+    bottomRightWarningToaster() {
+      this.warning({
+        position: `bottom-right`,
+        text: `Remove From Cart`,
+        subText: `Remove from cart successfully`,
+        duration: 4000,
+      })
+    },
+
+    /* Danger toaster position attach */
+    topLeftDangerToaster() {
+      this.danger({
+        position: `top-left`,
+        text: `Not available`,
+        subText: `Sorry there have no cart item`,
+        duration: 4000,
+      })
+    },
+
+    topRightDangerToaster() {
+      this.danger({
+        position: `top-right`,
+        text: `Not available`,
+        subText: `Sorry there have no cart item`,
+        duration: 4000,
+      })
+    },
+
+    bottomLeftDangerToaster() {
+      this.danger({
+        position: `bottom-Left`,
+        text: `Not available`,
+        subText: `Sorry there have no cart item`,
+        duration: 4000,
+      })
+    },
+
+    bottomRightDangerToaster() {
+      this.danger({
+        position: `bottom-right`,
+        text: `Not available`,
+        subText: `Sorry there have no cart item`,
+        duration: 4000,
+      })
+    },
+
+    /* --- --- --- success toaster --- --- --- */
+    success(options) {
+      this.toastPosition = options.position;
       let toaster = document.getElementById('toaster');
-      toaster.className = 'fixed p-10' + ' ' +positionTop + ' ' + positionBottom + ' ' + positionLeft + ' ' + positionRight;
       let htmlCode = `
         <div class="transform-effect">
           <div class="toaster mb-10 d-flex justify-start items-center">
@@ -51,10 +240,10 @@ export default {
             </div>
             <div class="ml-20">
               <div class="mb-5 text-success head">
-                `+text+`
+                ` + options.text + `
               </div>
               <div class="paragraph">
-                `+subText+`
+                ` + options.subText + `
               </div>
             </div>
           </div>
@@ -63,15 +252,18 @@ export default {
       const div = document.createElement('div')
       div.innerHTML = htmlCode
       toaster.appendChild(div)
-      setTimeout(()=> {
+      setTimeout(() => {
         toaster.removeChild(div)
-        toaster.className = '';
-      },timeOut)
+        if(div.length === 0) {
+          this.toastPosition = ''
+        }
+      }, options.duration)
     },
 
-    warningToaster(positionTop, positionBottom, positionLeft, positionRight, text, subText, timeOut) {
+    /* --- --- --- warning toaster --- --- --- */
+    warning(options) {
+      this.toastPosition = options.position;
       let toaster = document.getElementById('toaster');
-      toaster.className = 'fixed p-10' + ' ' +positionTop + ' ' + positionBottom + ' ' + positionLeft + ' ' + positionRight;
       let htmlCode = `
         <div class="transform-effect">
           <div class="toaster mb-10 d-flex justify-start items-center">
@@ -80,10 +272,10 @@ export default {
             </div>
             <div class="ml-20">
               <div class="mb-5 text-warning head">
-                  `+text+`
+                  ` + options.text + `
               </div>
               <div class="paragraph">
-                  `+subText+`
+                  ` + options.subText + `
               </div>
             </div>
           </div>
@@ -92,15 +284,18 @@ export default {
       const div = document.createElement('div')
       div.innerHTML = htmlCode
       toaster.appendChild(div)
-      setTimeout(()=> {
+      setTimeout(() => {
         toaster.removeChild(div)
-        toaster.className = '';
-      },timeOut)
+        if(div.length === 0) {
+          this.toastPosition = ''
+        }
+      }, options.duration)
     },
 
-    dangerToaster(positionTop, positionBottom, positionLeft, positionRight, text, subText, timeOut) {
+    /* --- --- --- danger toaster --- --- --- */
+    danger(options) {
+      this.toastPosition = options.position;
       let toaster = document.getElementById('toaster');
-      toaster.className = 'fixed p-10' + ' ' +positionTop + ' ' + positionBottom + ' ' + positionLeft + ' ' + positionRight;
       let htmlCode = `
         <div class="transform-effect">
           <div class="toaster mb-10 d-flex justify-start items-center">
@@ -109,10 +304,10 @@ export default {
             </div>
             <div class="ml-20">
               <div class="mb-5 text-danger head">
-                `+text+`
+                ` + options.text + `
               </div>
               <div class="paragraph">
-                  `+subText+`
+                  ` + options.subText + `
               </div>
             </div>
           </div>
@@ -121,10 +316,12 @@ export default {
       const div = document.createElement('div')
       div.innerHTML = htmlCode
       toaster.appendChild(div)
-      setTimeout(()=> {
+      setTimeout(() => {
         toaster.removeChild(div)
-        toaster.className = '';
-      },timeOut)
+        if(div.length === 0) {
+          this.toastPosition = ''
+        }
+      }, options.duration)
     },
 
   }
