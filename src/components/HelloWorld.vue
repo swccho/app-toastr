@@ -1,12 +1,14 @@
 <template>
 
   <div class="p-20 text-center text-size-35">
-    Toastr
+    Toaster (No JQuery Needed)
   </div>
 
   <div class="px-20 pt-20">
-    <div class="mb-10"> inside of template apply this code once.</div>
-    <div class="bg-light border-radius-rounded shadow-box p-10 overflow-x">
+    <div class="mb-10">
+      inside of template apply this code once.
+    </div>
+    <div class="bg-light border-radius-rounded shadow-box px-10 overflow-x">
       <pre> {{ preCode }} </pre>
     </div>
   </div>
@@ -19,7 +21,7 @@
           Apply this code in your methods function
         </div>
         <div class="mb-10"></div>
-        <button type="button" class="btn btn-primary" @click="topLeftSuccessToaster(1200)">
+        <button type="button" class="btn btn-primary" @click="topLeftSuccessToaster()">
           Click Here
         </button>
         <div class="mb-10 bg-light border-radius-rounded shadow-box p-10 overflow-x">
@@ -357,47 +359,50 @@
   </div>
 
   <div class="fixed p-10" id="toaster" :class="toastPosition" v-if="toastArray.length > 0">
-    <template v-for="each in toastArray" :key="each.id">
-      <ToasterComponent :type="each.type" :text="each.text" :sub-text="each.subText"></ToasterComponent>
+    <template v-for="(each, index) in toastArray" :key="index">
+      <ToasterComponent :type="each.type" :text="each.text" :sub-text="each.subText" @removeToaster="removeToaster(index)"></ToasterComponent>
     </template>
   </div>
 
 </template>
 
 <script>
+
 import ToasterComponent from "@/components/ToasterComponent.vue";
 
 export default {
+
   name: 'HelloWorld',
+
   components: {
     ToasterComponent
   },
+
   data() {
     return {
       toastPosition: 'top-right',
       toastArray: [],
       preCode: `
         <div class="fixed p-10" id="toaster" :class="toastPosition" v-if="toastArray.length > 0">
-          <template v-for="each in toastArray" :key="each.id">
-            <ToasterComponent :type="each.type" :text="each.text" :sub-text="each.subText"></ToasterComponent>
+          <template v-for="(each, index) in toastArray" :key="index">
+            <ToasterComponent :type="each.type" :text="each.text" :sub-text="each.subText" @removeToaster="removeToaster(index)"></ToasterComponent>
           </template>
         </div>
       `,
-      showTableData: [
-        {
-          id: '1',
-          position: 'top-left',
-
-        }
-      ]
     }
   },
-  mounted() {
-  },
+
+  mounted() {  },
+
   methods: {
 
+    /* Function to remove toaster */
+    removeToaster(index) {
+        this.toastArray.splice(index , 1);
+    },
+
     /* Success toaster position attach */
-    topLeftSuccessToaster(duration) {
+    topLeftSuccessToaster() {
       this.toastPosition = `top-left`;
       this.toastArray.push(
           {
@@ -408,7 +413,7 @@ export default {
       )
       setTimeout(() => {
         this.toastArray.splice(length - 1, 1);
-      }, duration)
+      }, 5000)
     },
 
     topRightSuccessToaster(duration) {

@@ -4,8 +4,16 @@
   position: fixed;
 }
 
+.relative {
+  position: relative;
+}
+
 .sticky {
   position: sticky;
+}
+
+.absolute {
+  position: absolute;
 }
 
 .top-right {
@@ -47,6 +55,12 @@
   width: 460px;
   padding: 40px;
   animation: toast 4s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+  transition: 0.3s all ease-in-out;
+
+  &:hover {
+    transition: 0.3s all ease-in-out;
+    background-color: #2a2a3a;
+  }
 
   @media screen and (max-width: 576px) {
     width: 100%;
