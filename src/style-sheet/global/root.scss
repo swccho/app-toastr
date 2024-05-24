@@ -25,7 +25,37 @@ body {
 }
 
 .container-fluid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25%,1fr));
-  grid-gap: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .column {
+    width: 33%;
+
+    @media screen and (max-width: 1200px) {
+      width: 50%;
+    }
+
+    @media screen and (max-width: 991px) {
+      width: 100%;
+    }
+
+  }
+
+}
+
+.overflow-x {
+  overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    width: 5px !important;
+    height: 5px !important;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--light-gray);
+    height: 5px !important;
+  }
+
 }

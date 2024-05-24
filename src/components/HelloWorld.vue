@@ -6,22 +6,23 @@
 
   <div class="px-20 pt-20">
     <div class="mb-10"> inside of template apply this code once.</div>
-    <div class="bg-light border-radius-rounded shadow-box p-10">
+    <div class="bg-light border-radius-rounded shadow-box p-10 overflow-x">
       <pre> {{ preCode }} </pre>
     </div>
   </div>
 
   <div class="container-fluid">
-    <div class="p-20">
-      <div class="mb-10">
-        Top left success toast <br>
-        Apply this code in your methods function
-      </div>
-      <div class="mb-10"></div>
-      <button type="button" class="btn btn-primary" @click="topLeftSuccessToaster(1200)">
-        Click Here
-      </button>
-      <div class="mb-10 bg-light border-radius-rounded shadow-box p-10">
+    <div class="column">
+      <div class="p-20">
+        <div class="mb-10">
+          Top left success toast <br>
+          Apply this code in your methods function
+        </div>
+        <div class="mb-10"></div>
+        <button type="button" class="btn btn-primary" @click="topLeftSuccessToaster(1200)">
+          Click Here
+        </button>
+        <div class="mb-10 bg-light border-radius-rounded shadow-box p-10 overflow-x">
         <pre>
           showToaster(duration) {
            this.toastPosition = `top-left`;
@@ -37,18 +38,20 @@
            }, duration)
           },
         </pre>
+        </div>
       </div>
     </div>
-    <div class="p-20">
-      <div class="mb-10">
-        Top right success toast <br>
-        Apply this code in your methods function
-      </div>
-      <div class="mb-10"></div>
-      <button type="button" class="btn btn-secondary" @click="topRightSuccessToaster(1200)">
-        Click Here
-      </button>
-      <div class="mt-10 bg-light border-radius-rounded shadow-box p-10">
+    <div class="column">
+      <div class="p-20">
+        <div class="mb-10">
+          Top right success toast <br>
+          Apply this code in your methods function
+        </div>
+        <div class="mb-10"></div>
+        <button type="button" class="btn btn-secondary" @click="topRightSuccessToaster(1200)">
+          Click Here
+        </button>
+        <div class="mt-10 bg-light border-radius-rounded shadow-box p-10 overflow-x">
         <pre>
           showToaster(duration) {
            this.toastPosition = `top-right`;
@@ -64,18 +67,20 @@
            }, duration)
           },
         </pre>
+        </div>
       </div>
     </div>
-    <div class="p-20">
-      <div class="mb-10">
-        bottom left success toast <br>
-        Apply this code in your methods function
-      </div>
-      <div class="mb-10"></div>
-      <button type="button" class="btn btn-info" @click="bottomLeftSuccessToaster(1200)">
-        Click Here
-      </button>
-      <div class="mt-10 bg-light border-radius-rounded shadow-box p-10">
+    <div class="column">
+      <div class="p-20">
+        <div class="mb-10">
+          bottom left success toast <br>
+          Apply this code in your methods function
+        </div>
+        <div class="mb-10"></div>
+        <button type="button" class="btn btn-info" @click="bottomLeftSuccessToaster(1200)">
+          Click Here
+        </button>
+        <div class="mt-10 bg-light border-radius-rounded shadow-box p-10 overflow-x">
         <pre>
           showToaster(duration) {
            this.toastPosition = `bottom-left`;
@@ -91,18 +96,20 @@
            }, duration)
           },
         </pre>
+        </div>
       </div>
     </div>
-    <div class="p-20">
-      <div class="mb-10">
-        bottom right success toast <br>
-        Apply this code in your methods function
-      </div>
-      <div class="mb-10"></div>
-      <button type="button" class="btn btn-danger" @click="bottomRightSuccessToaster(1200)">
-        Click Here
-      </button>
-      <div class="mt-10 bg-light border-radius-rounded shadow-box p-10">
+    <div class="column">
+      <div class="p-20">
+        <div class="mb-10">
+          bottom right success toast <br>
+          Apply this code in your methods function
+        </div>
+        <div class="mb-10"></div>
+        <button type="button" class="btn btn-danger" @click="bottomRightSuccessToaster(1200)">
+          Click Here
+        </button>
+        <div class="mt-10 bg-light border-radius-rounded shadow-box p-10 overflow-x">
         <pre>
           showToaster(duration) {
            this.toastPosition = `bottom-right`;
@@ -118,18 +125,20 @@
            }, duration)
           },
         </pre>
+        </div>
       </div>
     </div>
-    <div class="p-20">
-      <div class="mb-10">
-        Top left warning toast <br>
-        Apply this code in your methods function
-      </div>
-      <div class="mb-10"></div>
-      <button type="button" class="btn btn-success" @click="topLeftWarningToaster(1200)">
-        Click Here
-      </button>
-      <div class="mt-10 bg-light border-radius-rounded shadow-box p-10">
+    <div class="column">
+      <div class="p-20">
+        <div class="mb-10">
+          Top left warning toast <br>
+          Apply this code in your methods function
+        </div>
+        <div class="mb-10"></div>
+        <button type="button" class="btn btn-success" @click="topLeftWarningToaster(1200)">
+          Click Here
+        </button>
+        <div class="mt-10 bg-light border-radius-rounded shadow-box p-10 overflow-x">
         <pre>
           showToaster(duration) {
             this.toastPosition = `top-left`;
@@ -145,18 +154,20 @@
             }, duration)
           },
         </pre>
+        </div>
       </div>
     </div>
-    <div class="p-20">
-      <div class="mb-10">
-        Top right warning toast <br>
-        Apply this code in your methods function
-      </div>
-      <div class="mb-10"></div>
-      <button type="button" class="btn btn-light" @click="topRightWarningToaster(1200)">
-        Click Here
-      </button>
-      <div class="mt-10 bg-light border-radius-rounded shadow-box p-10">
+    <div class="column">
+      <div class="p-20">
+        <div class="mb-10">
+          Top right warning toast <br>
+          Apply this code in your methods function
+        </div>
+        <div class="mb-10"></div>
+        <button type="button" class="btn btn-light" @click="topRightWarningToaster(1200)">
+          Click Here
+        </button>
+        <div class="mt-10 bg-light border-radius-rounded shadow-box p-10 overflow-x">
         <pre>
           showToaster(duration) {
             this.toastPosition = `top-right`;
@@ -172,17 +183,19 @@
             }, duration)
           },
         </pre>
+        </div>
       </div>
     </div>
-    <div class="p-20">
-      <div class="mb-10">
-        bottom left warning toast <br>
-        Apply this code in your methods function
-      </div>
-      <button type="button" class="btn btn-dark" @click="bottomLeftWarningToaster(1200)">
-        Click Here
-      </button>
-      <div class="mt-10 bg-light border-radius-rounded shadow-box p-10">
+    <div class="column">
+      <div class="p-20">
+        <div class="mb-10">
+          bottom left warning toast <br>
+          Apply this code in your methods function
+        </div>
+        <button type="button" class="btn btn-dark" @click="bottomLeftWarningToaster(1200)">
+          Click Here
+        </button>
+        <div class="mt-10 bg-light border-radius-rounded shadow-box p-10 overflow-x">
         <pre>
           showToaster(duration) {
             this.toastPosition = `bottom-left`;
@@ -198,17 +211,19 @@
             }, duration)
           },
         </pre>
+        </div>
       </div>
     </div>
-    <div class="p-20">
-      <div class="mb-10">
-        bottom right warning toast <br>
-        Apply this code in your methods function
-      </div>
-      <button type="button" class="btn btn-primary" @click="bottomRightWarningToaster(1200)">
-        Click Here
-      </button>
-      <div class="mt-10 bg-light border-radius-rounded shadow-box p-10">
+    <div class="column">
+      <div class="p-20">
+        <div class="mb-10">
+          bottom right warning toast <br>
+          Apply this code in your methods function
+        </div>
+        <button type="button" class="btn btn-primary" @click="bottomRightWarningToaster(1200)">
+          Click Here
+        </button>
+        <div class="mt-10 bg-light border-radius-rounded shadow-box p-10 overflow-x">
         <pre>
           showToaster(duration) {
             this.toastPosition = `bottom-right`;
@@ -224,17 +239,19 @@
             }, duration)
           },
         </pre>
+        </div>
       </div>
     </div>
-    <div class="p-20">
-      <div class="mb-10">
-        Top left error toast <br>
-        Apply this code in your methods function
-      </div>
-      <button type="button" class="btn btn-secondary" @click="topLeftErrorToaster(1200)">
-        Click Here
-      </button>
-      <div class="mt-10 bg-light border-radius-rounded shadow-box p-10">
+    <div class="column">
+      <div class="p-20">
+        <div class="mb-10">
+          Top left error toast <br>
+          Apply this code in your methods function
+        </div>
+        <button type="button" class="btn btn-secondary" @click="topLeftErrorToaster(1200)">
+          Click Here
+        </button>
+        <div class="mt-10 bg-light border-radius-rounded shadow-box p-10 overflow-x">
         <pre>
           showToaster(duration) {
             this.toastPosition = `top-left`;
@@ -250,17 +267,19 @@
             }, duration)
           },
         </pre>
+        </div>
       </div>
     </div>
-    <div class="p-20">
-      <div class="mb-10">
-        Top right error toast <br>
-        Apply this code in your methods function
-      </div>
-      <button type="button" class="btn btn-info" @click="topRightErrorToaster(1200)">
-        Click Here
-      </button>
-      <div class="mt-10 bg-light border-radius-rounded shadow-box p-10">
+    <div class="column">
+      <div class="p-20">
+        <div class="mb-10">
+          Top right error toast <br>
+          Apply this code in your methods function
+        </div>
+        <button type="button" class="btn btn-info" @click="topRightErrorToaster(1200)">
+          Click Here
+        </button>
+        <div class="mt-10 bg-light border-radius-rounded shadow-box p-10 overflow-x">
         <pre>
           showToaster(duration) {
             this.toastPosition = `top-right`;
@@ -276,17 +295,19 @@
             }, duration)
           },
         </pre>
+        </div>
       </div>
     </div>
-    <div class="p-20">
-      <div class="mb-10">
-        bottom left error toast <br>
-        Apply this code in your methods function
-      </div>
-      <button type="button" class="btn btn-danger" @click="bottomLeftErrorToaster(1200)">
-        Click Here
-      </button>
-      <div class="mt-10 bg-light border-radius-rounded shadow-box p-10">
+    <div class="column">
+      <div class="p-20">
+        <div class="mb-10">
+          bottom left error toast <br>
+          Apply this code in your methods function
+        </div>
+        <button type="button" class="btn btn-danger" @click="bottomLeftErrorToaster(1200)">
+          Click Here
+        </button>
+        <div class="mt-10 bg-light border-radius-rounded shadow-box p-10 overflow-x">
         <pre>
           showToaster(duration) {
             this.toastPosition = `bottom-left`;
@@ -302,17 +323,19 @@
             }, duration)
           },
         </pre>
+        </div>
       </div>
     </div>
-    <div class="p-20">
-      <div class="mb-10">
-        bottom right error toast <br>
-        Apply this code in your methods function
-      </div>
-      <button type="button" class="btn btn-success" @click="bottomRightErrorToaster(1200)">
-        Click Here
-      </button>
-      <div class="mt-10 bg-light border-radius-rounded shadow-box p-10">
+    <div class="column">
+      <div class="p-20">
+        <div class="mb-10">
+          bottom right error toast <br>
+          Apply this code in your methods function
+        </div>
+        <button type="button" class="btn btn-success" @click="bottomRightErrorToaster(1200)">
+          Click Here
+        </button>
+        <div class="mt-10 bg-light border-radius-rounded shadow-box p-10 overflow-x">
         <pre>
           showToaster(duration) {
             this.toastPosition = `bottom-right`;
@@ -328,6 +351,7 @@
             }, duration)
           },
         </pre>
+        </div>
       </div>
     </div>
   </div>
