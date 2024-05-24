@@ -1,116 +1,371 @@
 <template>
 
-  <div class="container-fluid">
-
-    <div>
-
-      <button type="button" class="btn btn-dark" @click="topLeftSuccessToaster()">
-        Button
-      </button>
-
-    </div>
-
-    <div>
-
-      <button type="button" class="btn btn-dark" @click="topRightSuccessToaster()">
-        Button
-      </button>
-
-    </div>
-
-    <div>
-
-      <button type="button" class="btn btn-dark" @click="bottomLeftSuccessToaster()">
-        Button
-      </button>
-
-    </div>
-
-    <div>
-
-      <button type="button" class="btn btn-dark" @click="bottomRightSuccessToaster()">
-        Button
-      </button>
-
-    </div>
-
-    <div>
-
-      <button type="button" class="btn btn-dark" @click="topLeftWarningToaster()">
-        Button
-      </button>
-
-    </div>
-
-    <div>
-
-      <button type="button" class="btn btn-dark" @click="topRightWarningToaster()">
-        Button
-      </button>
-
-    </div>
-
-    <div>
-
-      <button type="button" class="btn btn-dark" @click="bottomLeftWarningToaster()">
-        Button
-      </button>
-
-    </div>
-
-    <div>
-
-      <button type="button" class="btn btn-dark" @click="bottomRightWarningToaster()">
-        Button
-      </button>
-
-    </div>
-
-    <div>
-
-      <button type="button" class="btn btn-dark" @click="topLeftDangerToaster()">
-        Button
-      </button>
-
-    </div>
-
-    <div>
-
-      <button type="button" class="btn btn-dark" @click="topRightDangerToaster()">
-        Button
-      </button>
-
-    </div>
-
-    <div>
-
-      <button type="button" class="btn btn-dark" @click="bottomLeftDangerToaster()">
-        Button
-      </button>
-
-    </div>
-
-    <div>
-
-      <button type="button" class="btn btn-dark" @click="bottomRightDangerToaster()">
-        Button
-      </button>
-
-    </div>
-
+  <div class="p-20 text-center text-size-35">
+    Toastr
   </div>
 
-  <div class="fixed p-10" id="toaster" :class="toastPosition"></div>
+  <div class="px-20 pt-20">
+    <div class="mb-10"> inside of template apply this code once.</div>
+    <div class="bg-light border-radius-rounded shadow-box p-10">
+      <pre> {{ preCode }} </pre>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="p-20">
+      <div class="mb-10">
+        Top left success toast <br>
+        Apply this code in your methods function
+      </div>
+      <div class="mb-10"></div>
+      <button type="button" class="btn btn-primary" @click="topLeftSuccessToaster(1200)">
+        Click Here
+      </button>
+      <div class="mb-10 bg-light border-radius-rounded shadow-box p-10">
+        <pre>
+          showToaster(duration) {
+           this.toastPosition = `top-left`;
+            this.toastArray.push(
+             {
+              type: 'success',
+              text: `Add to Cart`,
+              subText: `Add to cart successfully`,
+             }
+           )
+           setTimeout(() => {
+            this.toastArray.splice(length - 1, 1);
+           }, duration)
+          },
+        </pre>
+      </div>
+    </div>
+    <div class="p-20">
+      <div class="mb-10">
+        Top right success toast <br>
+        Apply this code in your methods function
+      </div>
+      <div class="mb-10"></div>
+      <button type="button" class="btn btn-secondary" @click="topRightSuccessToaster(1200)">
+        Click Here
+      </button>
+      <div class="mt-10 bg-light border-radius-rounded shadow-box p-10">
+        <pre>
+          showToaster(duration) {
+           this.toastPosition = `top-right`;
+            this.toastArray.push(
+             {
+              type: 'success',
+              text: `Add to Cart`,
+              subText: `Add to cart successfully`,
+             }
+           )
+           setTimeout(() => {
+            this.toastArray.splice(length - 1, 1);
+           }, duration)
+          },
+        </pre>
+      </div>
+    </div>
+    <div class="p-20">
+      <div class="mb-10">
+        bottom left success toast <br>
+        Apply this code in your methods function
+      </div>
+      <div class="mb-10"></div>
+      <button type="button" class="btn btn-info" @click="bottomLeftSuccessToaster(1200)">
+        Click Here
+      </button>
+      <div class="mt-10 bg-light border-radius-rounded shadow-box p-10">
+        <pre>
+          showToaster(duration) {
+           this.toastPosition = `bottom-left`;
+            this.toastArray.push(
+             {
+              type: 'success',
+              text: `Add to Cart`,
+              subText: `Add to cart successfully`,
+             }
+           )
+           setTimeout(() => {
+            this.toastArray.splice(length - 1, 1);
+           }, duration)
+          },
+        </pre>
+      </div>
+    </div>
+    <div class="p-20">
+      <div class="mb-10">
+        bottom right success toast <br>
+        Apply this code in your methods function
+      </div>
+      <div class="mb-10"></div>
+      <button type="button" class="btn btn-danger" @click="bottomRightSuccessToaster(1200)">
+        Click Here
+      </button>
+      <div class="mt-10 bg-light border-radius-rounded shadow-box p-10">
+        <pre>
+          showToaster(duration) {
+           this.toastPosition = `bottom-right`;
+            this.toastArray.push(
+             {
+              type: 'success',
+              text: `Add to Cart`,
+              subText: `Add to cart successfully`,
+             }
+           )
+           setTimeout(() => {
+            this.toastArray.splice(length - 1, 1);
+           }, duration)
+          },
+        </pre>
+      </div>
+    </div>
+    <div class="p-20">
+      <div class="mb-10">
+        Top left warning toast <br>
+        Apply this code in your methods function
+      </div>
+      <div class="mb-10"></div>
+      <button type="button" class="btn btn-success" @click="topLeftWarningToaster(1200)">
+        Click Here
+      </button>
+      <div class="mt-10 bg-light border-radius-rounded shadow-box p-10">
+        <pre>
+          showToaster(duration) {
+            this.toastPosition = `top-left`;
+            this.toastArray.push(
+              {
+                type: 'warning',
+                text: `Remove from cart`,
+                subText: `Remove from cart successfully`,
+              }
+            )
+          setTimeout(() => {
+          this.toastArray.splice(length - 1, 1);
+            }, duration)
+          },
+        </pre>
+      </div>
+    </div>
+    <div class="p-20">
+      <div class="mb-10">
+        Top right warning toast <br>
+        Apply this code in your methods function
+      </div>
+      <div class="mb-10"></div>
+      <button type="button" class="btn btn-light" @click="topRightWarningToaster(1200)">
+        Click Here
+      </button>
+      <div class="mt-10 bg-light border-radius-rounded shadow-box p-10">
+        <pre>
+          showToaster(duration) {
+            this.toastPosition = `top-right`;
+            this.toastArray.push(
+              {
+                type: 'warning',
+                text: `Remove from cart`,
+                subText: `Remove from cart successfully`,
+              }
+            )
+          setTimeout(() => {
+          this.toastArray.splice(length - 1, 1);
+            }, duration)
+          },
+        </pre>
+      </div>
+    </div>
+    <div class="p-20">
+      <div class="mb-10">
+        bottom left warning toast <br>
+        Apply this code in your methods function
+      </div>
+      <button type="button" class="btn btn-dark" @click="bottomLeftWarningToaster(1200)">
+        Click Here
+      </button>
+      <div class="mt-10 bg-light border-radius-rounded shadow-box p-10">
+        <pre>
+          showToaster(duration) {
+            this.toastPosition = `bottom-left`;
+            this.toastArray.push(
+              {
+                type: 'warning',
+                text: `Remove from cart`,
+                subText: `Remove from cart successfully`,
+              }
+            )
+          setTimeout(() => {
+          this.toastArray.splice(length - 1, 1);
+            }, duration)
+          },
+        </pre>
+      </div>
+    </div>
+    <div class="p-20">
+      <div class="mb-10">
+        bottom right warning toast <br>
+        Apply this code in your methods function
+      </div>
+      <button type="button" class="btn btn-primary" @click="bottomRightWarningToaster(1200)">
+        Click Here
+      </button>
+      <div class="mt-10 bg-light border-radius-rounded shadow-box p-10">
+        <pre>
+          showToaster(duration) {
+            this.toastPosition = `bottom-right`;
+            this.toastArray.push(
+              {
+                type: 'warning',
+                text: `Remove from cart`,
+                subText: `Remove from cart successfully`,
+              }
+            )
+          setTimeout(() => {
+          this.toastArray.splice(length - 1, 1);
+            }, duration)
+          },
+        </pre>
+      </div>
+    </div>
+    <div class="p-20">
+      <div class="mb-10">
+        Top left error toast <br>
+        Apply this code in your methods function
+      </div>
+      <button type="button" class="btn btn-secondary" @click="topLeftErrorToaster(1200)">
+        Click Here
+      </button>
+      <div class="mt-10 bg-light border-radius-rounded shadow-box p-10">
+        <pre>
+          showToaster(duration) {
+            this.toastPosition = `top-left`;
+            this.toastArray.push(
+              {
+                type: 'error',
+                text: `Server Error`,
+                subText: `Please check your integrated api`,
+              }
+            )
+            setTimeout(() => {
+              this.toastArray.splice(length - 1, 1);
+            }, duration)
+          },
+        </pre>
+      </div>
+    </div>
+    <div class="p-20">
+      <div class="mb-10">
+        Top right error toast <br>
+        Apply this code in your methods function
+      </div>
+      <button type="button" class="btn btn-info" @click="topRightErrorToaster(1200)">
+        Click Here
+      </button>
+      <div class="mt-10 bg-light border-radius-rounded shadow-box p-10">
+        <pre>
+          showToaster(duration) {
+            this.toastPosition = `top-right`;
+            this.toastArray.push(
+              {
+                type: 'error',
+                text: `Server Error`,
+                subText: `Please check your integrated api`,
+              }
+            )
+            setTimeout(() => {
+              this.toastArray.splice(length - 1, 1);
+            }, duration)
+          },
+        </pre>
+      </div>
+    </div>
+    <div class="p-20">
+      <div class="mb-10">
+        bottom left error toast <br>
+        Apply this code in your methods function
+      </div>
+      <button type="button" class="btn btn-danger" @click="bottomLeftErrorToaster(1200)">
+        Click Here
+      </button>
+      <div class="mt-10 bg-light border-radius-rounded shadow-box p-10">
+        <pre>
+          showToaster(duration) {
+            this.toastPosition = `bottom-left`;
+            this.toastArray.push(
+              {
+                type: 'error',
+                text: `Server Error`,
+                subText: `Please check your integrated api`,
+              }
+            )
+            setTimeout(() => {
+              this.toastArray.splice(length - 1, 1);
+            }, duration)
+          },
+        </pre>
+      </div>
+    </div>
+    <div class="p-20">
+      <div class="mb-10">
+        bottom right error toast <br>
+        Apply this code in your methods function
+      </div>
+      <button type="button" class="btn btn-success" @click="bottomRightErrorToaster(1200)">
+        Click Here
+      </button>
+      <div class="mt-10 bg-light border-radius-rounded shadow-box p-10">
+        <pre>
+          showToaster(duration) {
+            this.toastPosition = `bottom-right`;
+            this.toastArray.push(
+              {
+                type: 'error',
+                text: `Server Error`,
+                subText: `Please check your integrated api`,
+              }
+            )
+            setTimeout(() => {
+              this.toastArray.splice(length - 1, 1);
+            }, duration)
+          },
+        </pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="fixed p-10" id="toaster" :class="toastPosition" v-if="toastArray.length > 0">
+    <template v-for="each in toastArray" :key="each.id">
+      <ToasterComponent :type="each.type" :text="each.text" :sub-text="each.subText"></ToasterComponent>
+    </template>
+  </div>
 
 </template>
 
 <script>
+import ToasterComponent from "@/components/ToasterComponent.vue";
 
 export default {
   name: 'HelloWorld',
+  components: {
+    ToasterComponent
+  },
   data() {
     return {
-      toastPosition: 'top-right'
+      toastPosition: 'top-right',
+      toastArray: [],
+      preCode: `
+        <div class="fixed p-10" id="toaster" :class="toastPosition" v-if="toastArray.length > 0">
+          <template v-for="each in toastArray" :key="each.id">
+            <ToasterComponent :type="each.type" :text="each.text" :sub-text="each.subText"></ToasterComponent>
+          </template>
+        </div>
+      `,
+      showTableData: [
+        {
+          id: '1',
+          position: 'top-left',
+
+        }
+      ]
     }
   },
   mounted() {
@@ -118,210 +373,174 @@ export default {
   methods: {
 
     /* Success toaster position attach */
-    topLeftSuccessToaster() {
-      this.success({
-        position: `top-left`,
-        text: `Add to Cart`,
-        subText: `Add to cart successfully`,
-        duration: 4000
-      })
+    topLeftSuccessToaster(duration) {
+      this.toastPosition = `top-left`;
+      this.toastArray.push(
+          {
+            type: 'success',
+            text: `Add to Cart`,
+            subText: `Add to cart successfully`,
+          }
+      )
+      setTimeout(() => {
+        this.toastArray.splice(length - 1, 1);
+      }, duration)
     },
 
-    topRightSuccessToaster() {
-      this.success({
-        position: `top-right`,
-        text: `Add to Cart`,
-        subText: `Add to cart successfully`,
-        duration: 4000,
-      })
+    topRightSuccessToaster(duration) {
+      this.toastPosition = `top-right`;
+      this.toastArray.push(
+          {
+            type: 'success',
+            text: `Add to Cart`,
+            subText: `Add to cart successfully`,
+          }
+      )
+      setTimeout(() => {
+        this.toastArray.splice(length - 1, 1);
+      }, duration)
     },
 
-    bottomLeftSuccessToaster() {
-      this.success({
-        position: `bottom-Left`,
-        text: `Add to Cart`,
-        subText: `Add to cart successfully`,
-        duration: 4000,
-      })
+    bottomLeftSuccessToaster(duration) {
+      this.toastPosition = `bottom-Left`;
+      this.toastArray.push(
+          {
+            type: 'success',
+            text: `Add to Cart`,
+            subText: `Add to cart successfully`,
+          }
+      )
+      setTimeout(() => {
+        this.toastArray.splice(length - 1, 1);
+      }, duration)
     },
 
-    bottomRightSuccessToaster() {
-      this.success({
-        position: `bottom-right`,
-        text: `Add to Cart`,
-        subText: `Add to cart successfully`,
-        duration: 4000,
-      })
+    bottomRightSuccessToaster(duration) {
+      this.toastPosition = `bottom-right`;
+      this.toastArray.push(
+          {
+            type: 'success',
+            text: `Add to Cart`,
+            subText: `Add to cart successfully`,
+          }
+      )
+      setTimeout(() => {
+        this.toastArray.splice(length - 1, 1);
+      }, duration)
     },
 
     /* Warning toaster position attach */
-    topLeftWarningToaster() {
-      this.warning({
-        position: `top-left`,
-        text: `Remove From Cart`,
-        subText: `Remove from cart successfully`,
-        duration: 4000,
-      })
-    },
-
-    topRightWarningToaster() {
-      this.warning({
-        position: `top-right`,
-        text: `Remove From Cart`,
-        subText: `Remove from cart successfully`,
-        duration: 4000,
-      })
-    },
-
-    bottomLeftWarningToaster() {
-      this.warning({
-        position: `bottom-Left`,
-        text: `Remove From Cart`,
-        subText: `Remove from cart successfully`,
-        duration: 4000,
-      })
-    },
-
-    bottomRightWarningToaster() {
-      this.warning({
-        position: `bottom-right`,
-        text: `Remove From Cart`,
-        subText: `Remove from cart successfully`,
-        duration: 4000,
-      })
-    },
-
-    /* Danger toaster position attach */
-    topLeftDangerToaster() {
-      this.danger({
-        position: `top-left`,
-        text: `Not available`,
-        subText: `Sorry there have no cart item`,
-        duration: 4000,
-      })
-    },
-
-    topRightDangerToaster() {
-      this.danger({
-        position: `top-right`,
-        text: `Not available`,
-        subText: `Sorry there have no cart item`,
-        duration: 4000,
-      })
-    },
-
-    bottomLeftDangerToaster() {
-      this.danger({
-        position: `bottom-Left`,
-        text: `Not available`,
-        subText: `Sorry there have no cart item`,
-        duration: 4000,
-      })
-    },
-
-    bottomRightDangerToaster() {
-      this.danger({
-        position: `bottom-right`,
-        text: `Not available`,
-        subText: `Sorry there have no cart item`,
-        duration: 4000,
-      })
-    },
-
-    /* --- --- --- success toaster --- --- --- */
-    success(options) {
-      this.toastPosition = options.position;
-      let toaster = document.getElementById('toaster');
-      let htmlCode = `
-        <div class="transform-effect">
-          <div class="toaster mb-10 d-flex justify-start items-center">
-            <div class="bg-success width-30 height-30 border-radius-circle d-flex justify-center items-center shadow-success">
-              <img src="/svg/success.svg" class="width-18 height-18" alt="error">
-            </div>
-            <div class="ml-20">
-              <div class="mb-5 text-success head">
-                ` + options.text + `
-              </div>
-              <div class="paragraph">
-                ` + options.subText + `
-              </div>
-            </div>
-          </div>
-        </div>
-      `
-      const div = document.createElement('div')
-      div.innerHTML = htmlCode
-      toaster.appendChild(div)
+    topLeftWarningToaster(duration) {
+      this.toastPosition = `top-left`;
+      this.toastArray.push(
+          {
+            type: 'warning',
+            text: `Remove from cart`,
+            subText: `Remove from cart successfully`,
+          }
+      )
       setTimeout(() => {
-        toaster.removeChild(div)
-        if(div.length === 0) {
-          this.toastPosition = ''
-        }
-      }, options.duration)
+        this.toastArray.splice(length - 1, 1);
+      }, duration)
     },
 
-    /* --- --- --- warning toaster --- --- --- */
-    warning(options) {
-      this.toastPosition = options.position;
-      let toaster = document.getElementById('toaster');
-      let htmlCode = `
-        <div class="transform-effect">
-          <div class="toaster mb-10 d-flex justify-start items-center">
-            <div class="bg-warning width-30 height-30 border-radius-circle d-flex justify-center items-center shadow-warning">
-                <img src="/svg/warning.svg" class="width-18 height-18" alt="error">
-            </div>
-            <div class="ml-20">
-              <div class="mb-5 text-warning head">
-                  ` + options.text + `
-              </div>
-              <div class="paragraph">
-                  ` + options.subText + `
-              </div>
-            </div>
-          </div>
-        </div>
-      `
-      const div = document.createElement('div')
-      div.innerHTML = htmlCode
-      toaster.appendChild(div)
+    topRightWarningToaster(duration) {
+      this.toastPosition = `top-right`;
+      this.toastArray.push(
+          {
+            type: 'warning',
+            text: `Remove from cart`,
+            subText: `Remove from cart successfully`,
+          }
+      )
       setTimeout(() => {
-        toaster.removeChild(div)
-        if(div.length === 0) {
-          this.toastPosition = ''
-        }
-      }, options.duration)
+        this.toastArray.splice(length - 1, 1);
+      }, duration)
     },
 
-    /* --- --- --- danger toaster --- --- --- */
-    danger(options) {
-      this.toastPosition = options.position;
-      let toaster = document.getElementById('toaster');
-      let htmlCode = `
-        <div class="transform-effect">
-          <div class="toaster mb-10 d-flex justify-start items-center">
-            <div class="bg-danger width-30 height-30 border-radius-circle d-flex justify-center items-center shadow-danger">
-              <img src="/svg/error.svg" class="width-18 height-18" alt="error">
-            </div>
-            <div class="ml-20">
-              <div class="mb-5 text-danger head">
-                ` + options.text + `
-              </div>
-              <div class="paragraph">
-                  ` + options.subText + `
-              </div>
-            </div>
-          </div>
-        </div>
-      `
-      const div = document.createElement('div')
-      div.innerHTML = htmlCode
-      toaster.appendChild(div)
+    bottomLeftWarningToaster(duration) {
+      this.toastPosition = `bottom-Left`;
+      this.toastArray.push(
+          {
+            type: 'warning',
+            text: `Remove from cart`,
+            subText: `Remove from cart successfully`,
+          }
+      )
       setTimeout(() => {
-        toaster.removeChild(div)
-        if(div.length === 0) {
-          this.toastPosition = ''
-        }
-      }, options.duration)
+        this.toastArray.splice(length - 1, 1);
+      }, duration)
+    },
+
+    bottomRightWarningToaster(duration) {
+      this.toastPosition = `bottom-right`;
+      this.toastArray.push(
+          {
+            type: 'warning',
+            text: `Remove from cart`,
+            subText: `Remove from cart successfully`,
+          }
+      )
+      setTimeout(() => {
+        this.toastArray.splice(length - 1, 1);
+      }, duration)
+    },
+
+    /* Error toaster position attach */
+    topLeftErrorToaster(duration) {
+      this.toastPosition = `top-left`;
+      this.toastArray.push(
+          {
+            type: 'error',
+            text: `Server Error`,
+            subText: `Please check your integrated api`,
+          }
+      )
+      setTimeout(() => {
+        this.toastArray.splice(length - 1, 1);
+      }, duration)
+    },
+
+    topRightErrorToaster(duration) {
+      this.toastPosition = `top-right`;
+      this.toastArray.push(
+          {
+            type: 'error',
+            text: `Server Error`,
+            subText: `Please check your integrated api`,
+          }
+      )
+      setTimeout(() => {
+        this.toastArray.splice(length - 1, 1);
+      }, duration)
+    },
+
+    bottomLeftErrorToaster(duration) {
+      this.toastPosition = `bottom-Left`;
+      this.toastArray.push(
+          {
+            type: 'error',
+            text: `Server Error`,
+            subText: `Please check your integrated api`,
+          }
+      )
+      setTimeout(() => {
+        this.toastArray.splice(length - 1, 1);
+      }, duration)
+    },
+
+    bottomRightErrorToaster(duration) {
+      this.toastPosition = `bottom-right`;
+      this.toastArray.push(
+          {
+            type: 'error',
+            text: `Server Error`,
+            subText: `Please check your integrated api`,
+          }
+      )
+      setTimeout(() => {
+        this.toastArray.splice(length - 1, 1);
+      }, duration)
     },
 
   }

@@ -2,6 +2,11 @@ $iteration: 2560;
 $base-value: 1px;
 @for $i from 1 through $iteration {
 
+  /* --- --- --- text size --- --- --- */
+  .text-size-#{$i} {
+    font-size: $base-value * $i !important;
+  }
+
   /* --- --- --- gap --- --- --- */
   .gap-#{$i} {
     gap: $base-value * $i !important;

@@ -48,6 +48,10 @@
   padding: 40px;
   animation: toast 4s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
 
+  @media screen and (max-width: 576px) {
+    width: 100%;
+  }
+
   .head {
     font-size: 19px !important;
   }
