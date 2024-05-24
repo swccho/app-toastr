@@ -360,7 +360,8 @@
 
   <div class="fixed p-10" id="toaster" :class="toastPosition" v-if="toastArray.length > 0">
     <template v-for="(each, index) in toastArray" :key="index">
-      <ToasterComponent :type="each.type" :text="each.text" :sub-text="each.subText" @removeToaster="removeToaster(index)"></ToasterComponent>
+      <ToasterComponent :type="each.type" :text="each.text" :sub-text="each.subText"
+                        @removeToaster="removeToaster(index)"></ToasterComponent>
     </template>
   </div>
 
@@ -392,16 +393,16 @@ export default {
     }
   },
 
-  mounted() {  },
+  mounted() {
+  },
 
   methods: {
 
     /* Function to remove toaster */
     removeToaster(index) {
-        this.toastArray.splice(index , 1);
+      this.toastArray.splice(index, 1);
     },
 
-    /* Success toaster position attach */
     topLeftSuccessToaster() {
       this.toastPosition = `top-left`;
       this.toastArray.push(
@@ -458,7 +459,6 @@ export default {
       }, duration)
     },
 
-    /* Warning toaster position attach */
     topLeftWarningToaster(duration) {
       this.toastPosition = `top-left`;
       this.toastArray.push(
@@ -515,7 +515,6 @@ export default {
       }, duration)
     },
 
-    /* Error toaster position attach */
     topLeftErrorToaster(duration) {
       this.toastPosition = `top-left`;
       this.toastArray.push(

@@ -5,3 +5,12 @@
 .border-radius-rounded {
   border-radius: 10px;
 }
+
+.outline-none {
+  border: 1px solid var(--border-color);
+  outline: none;
+}
+
+.resize-none {
+  resize: none;
+}
